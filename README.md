@@ -1,1 +1,4 @@
 # data-structure-or-anythings
+OPEN SOURCE 
+WRITE YOUR CODE HERE
+HACKTOBERFEST 2K20
