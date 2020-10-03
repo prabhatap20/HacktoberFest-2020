@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+class Node
+{
+    public:
+    int data;
+    Node *next;
+    public:
+    Node(int data)
+    {
+        this->data=data;
+        this->next=NULL;
+    }
+};
+Node * createlist()
+{
+    int num;
+    char ch;
+    Node *head=NULL,*tail=NULL;  
+    do
+    {
+          cout<<"enter data"<<endl;
+          cin>>num;
+
+    Node *newNode=new Node(num);
+        if(head==NULL)
+        {
+            head=newNode;
+            newNode ->next=newNode;
+            tail=newNode;
+         }
+        else
+        {
+            tail->next=newNode;
+            newNode->next=head;
+            tail=tail->next;
+        }
+        cout<<"do u want to continue"<<endl;
+        cin>>ch;
+    }while(ch=='y'||ch=='Y');
+    return head;
+}
+void printlist(Node *head)
+{
+    Node *temp=head;
+   while(head!=temp->next)
+   {
+       cout<<temp->data<<" ";
+       temp=temp->next;
+   }
+   cout<<temp->data;
+}
+
+Node * delbeg(Node *head)
+{
+   Node *temp=head;
+ head=temp->next;
+ delete temp;
+ return head;
+}
+
+int main()
+{
+    Node *head;
+    head=createlist();
+    printlist(head);
+    head=delbeg(head);
+    cout<<endl;
+    printlist(head);
+    return 0;
+}
+
+
+
+
+
