@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+int t;
+scanf("%d",&t);
+while(t--)
+{
+int num,i,max=0,sim=0,sum=0;
+scanf("%d",&num);
+int a[num];
+for(i=0;i<num;i++)
+scanf("%d",&a[i]);
+for(i=0;i<num;i++)
+{
+if(max<a[i])
+{
+max=a[i];
+sim=i;
+}
+}
+for(i=0;i<num;i++)
+{ if(i!=sim)
+sum+=a[i];
+}
+if(max<sum)
+printf("Yes\n");
+else
+printf("No\n");
+}
+}
